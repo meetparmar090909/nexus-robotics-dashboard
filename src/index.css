@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;800;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --color-bg-darker: #02040a;
+  --color-bg-dark: #070b13;
+  --color-bg-panel: rgba(11, 19, 32, 0.45);
+  --color-border-glow: rgba(0, 242, 254, 0.15);
+  
+  --color-neon-cyan: #00f2fe;
+  --color-neon-blue: #4facfe;
+  --color-neon-purple: #7f00ff;
+  --color-neon-pink: #ff007f;
+  --color-neon-red: #ff3b30;
+  --color-neon-green: #00e676;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg-darker);
+  color: #e2e8f0;
+  font-family: 'Rajdhani', 'Inter', sans-serif;
+  letter-spacing: 0.03em;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #02040a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 242, 254, 0.25);
+  border-radius: 3px;
+  border: 1px solid rgba(0, 242, 254, 0.05);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 242, 254, 0.6);
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.4);
+}
+
+/* Futuristic Scanline Effect */
+.hud-scanline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.15) 50%
+  );
+  background-size: 100% 4px;
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* Glassmorphism Panel styles */
+.glass-panel {
+  background: rgba(8, 14, 24, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 242, 254, 0.12);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.37),
+    inset 0 0 12px rgba(0, 242, 254, 0.05);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel:hover {
+  border-color: rgba(0, 242, 254, 0.25);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.5),
+    inset 0 0 18px rgba(0, 242, 254, 0.08),
+    0 0 15px rgba(0, 242, 254, 0.1);
+}
+
+.glass-panel-purple {
+  background: rgba(12, 8, 24, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(127, 0, 255, 0.12);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.37),
+    inset 0 0 12px rgba(127, 0, 255, 0.05);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-purple:hover {
+  border-color: rgba(127, 0, 255, 0.25);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.5),
+    inset 0 0 18px rgba(127, 0, 255, 0.08),
+    0 0 15px rgba(127, 0, 255, 0.1);
+}
+
+/* Sci-fi Corner Elements */
+.sci-fi-corners {
+  position: relative;
+}
+
+.sci-fi-corners::before,
+.sci-fi-corners::after,
+.sci-fi-corners > .corner-bottom-left,
+.sci-fi-corners > .corner-bottom-right {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: #00f2fe;
+  border-style: solid;
+  pointer-events: none;
+}
+
+/* Top Left */
+.sci-fi-corners::before {
+  top: -1px;
+  left: -1px;
+  border-width: 2px 0 0 2px;
+}
+
+/* Top Right */
+.sci-fi-corners::after {
+  top: -1px;
+  right: -1px;
+  border-width: 2px 2px 0 0;
+}
+
+/* Bottom Left & Right inner anchors */
+.corner-bottom-left {
+  bottom: -1px;
+  left: -1px;
+  border-width: 0 0 2px 2px;
+}
+
+.corner-bottom-right {
+  bottom: -1px;
+  right: -1px;
+  border-width: 0 2px 2px 0;
+}
+
+/* Glow effects */
+.glow-text-cyan {
+  text-shadow: 0 0 8px rgba(0, 242, 254, 0.6), 0 0 20px rgba(0, 242, 254, 0.2);
+}
+
+.glow-text-purple {
+  text-shadow: 0 0 8px rgba(127, 0, 255, 0.6), 0 0 20px rgba(127, 0, 255, 0.2);
+}
+
+.glow-text-pink {
+  text-shadow: 0 0 8px rgba(255, 0, 127, 0.6), 0 0 20px rgba(255, 0, 127, 0.2);
+}
+
+.glow-text-green {
+  text-shadow: 0 0 8px rgba(0, 230, 118, 0.6), 0 0 20px rgba(0, 230, 118, 0.2);
+}
+
+.glow-text-red {
+  text-shadow: 0 0 8px rgba(255, 59, 48, 0.6), 0 0 20px rgba(255, 59, 48, 0.2);
+}
+
+/* Blinking Indicator Animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; filter: brightness(1.2) drop-shadow(0 0 4px currentColor); }
+  50% { opacity: 0.3; filter: brightness(0.8) drop-shadow(0 0 1px currentColor); }
+}
+
+.animate-blink {
+  animation: blink 1.5s infinite;
+}
+
+.animate-blink-fast {
+  animation: blink 0.6s infinite;
+}
+
+/* Grid Matrix Animation */
+@keyframes matrix-scroll {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 100%; }
+}
+
+.matrix-bg {
+  background-image: linear-gradient(rgba(0, 242, 254, 0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0, 242, 254, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.matrix-bg-animated {
+  background-image: linear-gradient(rgba(0, 242, 254, 0.04) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0, 242, 254, 0.04) 1px, transparent 1px);
+  background-size: 30px 30px;
+  animation: matrix-scroll 60s linear infinite;
+}
+
+/* Radar Scan Line */
+@keyframes radar-sweep {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.radar-sweep-line {
+  transform-origin: bottom right;
+  animation: radar-sweep 6s linear infinite;
+}
+
+/* Soundwave Waveform Animation */
+@keyframes soundwave {
+  0%, 100% { height: 10%; }
+  50% { height: 100%; }
+}
+
+.soundwave-bar {
+  animation: soundwave 1.2s ease-in-out infinite;
+}
+
+/* Glowing Neon Borders */
+.neon-border-cyan {
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.2), inset 0 0 5px rgba(0, 242, 254, 0.1);
+}
+
+.neon-border-purple {
+  box-shadow: 0 0 10px rgba(127, 0, 255, 0.2), inset 0 0 5px rgba(127, 0, 255, 0.1);
+}
+
+.neon-border-red {
+  box-shadow: 0 0 10px rgba(255, 59, 48, 0.2), inset 0 0 5px rgba(255, 59, 48, 0.1);
+}
+
+/* Custom Typography Helpers */
+.font-orbitron {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.font-rajdhani {
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.font-mono-tech {
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Status colors and buttons */
+.btn-futuristic {
+  position: relative;
+  overflow: hidden;
+  background: rgba(0, 242, 254, 0.05);
+  border: 1px solid rgba(0, 242, 254, 0.3);
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #00f2fe;
+  transition: all 0.3s ease;
+  clip-path: polygon(10px 0%, 100% 0%, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0% 100%, 0% 10px);
+}
+
+.btn-futuristic::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 242, 254, 0.2),
+    transparent
+  );
+  transition: all 0.5s ease;
+}
+
+.btn-futuristic:hover::before {
+  left: 100%;
+}
+
+.btn-futuristic:hover {
+  background: rgba(0, 242, 254, 0.15);
+  border-color: #00f2fe;
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+  text-shadow: 0 0 8px rgba(0, 242, 254, 0.5);
+  transform: translateY(-1px);
+}
+
+.btn-futuristic:active {
+  transform: translateY(1px);
+}
+
+.btn-futuristic-purple {
+  position: relative;
+  overflow: hidden;
+  background: rgba(127, 0, 255, 0.05);
+  border: 1px solid rgba(127, 0, 255, 0.3);
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #a855f7;
+  transition: all 0.3s ease;
+  clip-path: polygon(10px 0%, 100% 0%, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0% 100%, 0% 10px);
+}
+
+.btn-futuristic-purple::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(127, 0, 255, 0.2),
+    transparent
+  );
+  transition: all 0.5s ease;
+}
+
+.btn-futuristic-purple:hover::before {
+  left: 100%;
+}
+
+.btn-futuristic-purple:hover {
+  background: rgba(127, 0, 255, 0.15);
+  border-color: #7f00ff;
+  box-shadow: 0 0 15px rgba(127, 0, 255, 0.3);
+  text-shadow: 0 0 8px rgba(127, 0, 255, 0.5);
+  transform: translateY(-1px);
+}
+
+/* Edge overlay scanner line for camera views */
+.scanner-bar {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00f2fe, transparent);
+  position: absolute;
+  left: 0;
+  animation: scan 4s linear infinite;
+  box-shadow: 0 0 10px #00f2fe;
+}
+
+@keyframes scan {
+  0% { top: 0%; }
+  50% { top: 100%; }
+  100% { top: 0%; }
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}

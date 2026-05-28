@@ -14,7 +14,7 @@
 
 ```bash
 # 1. Navigate to the project folder
-cd "Your_Foulder _Path"
+cd "Your_Folder _Path"
 
 # 2. Install all dependencies
 npm install

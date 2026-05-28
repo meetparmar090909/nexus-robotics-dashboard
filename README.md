@@ -14,7 +14,7 @@
 
 ```bash
 # 1. Navigate to the project folder
-cd "I Studio Project/Coding"
+cd "Your_Foulder _Path"
 
 # 2. Install all dependencies
 npm install
